@@ -10,8 +10,8 @@
 ## Project Details
 
 ### Game Assets
-[TinySwords by Pixel Frog](https://pixelfrog-assets.itch.io/tiny-swords)
-[Font Source](https://nimblebeastscollective.itch.io/nb-pixel-font-bundle)
+- [TinySwords by Pixel Frog](https://pixelfrog-assets.itch.io/tiny-swords)
+- [Font Source](https://nimblebeastscollective.itch.io/nb-pixel-font-bundle)
 
 ### Purpose
 This is an intermediate-level self-development & self-learning project not intended for production use. This game has not been published and is only playable locally.
