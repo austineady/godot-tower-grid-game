@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://dd48vomyxpscx"]
+
+[ext_resource type="Script" uid="uid://djgxn841abb28" path="res://scenes/ui/GameUI.cs" id="1_r8hcy"]
+[ext_resource type="Resource" uid="uid://bxxhm4q8315qg" path="res://resources/building/village.tres" id="2_jwej7"]
+[ext_resource type="Resource" uid="uid://s85m005u3om" path="res://resources/building/tower.tres" id="3_xsfm0"]
+[ext_resource type="Resource" uid="uid://cf27yka56fnxo" path="res://resources/building/barracks.tres" id="4_627l5"]
+[ext_resource type="PackedScene" uid="uid://dhljjqoxx7r27" path="res://scenes/ui/BuildingSection.tscn" id="4_xsfm0"]
+[ext_resource type="Texture2D" uid="uid://cfvyjo6d8kjpb" path="res://assets/ui/wood_icon.png" id="5_rv83x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_627l5"]
+atlas = ExtResource("5_rv83x")
+region = Rect2(39, 72, 32, 28)
+
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource("1_r8hcy")
+buildingResources = Array[Object]([ExtResource("2_jwej7"), ExtResource("3_xsfm0"), ExtResource("4_627l5")])
+buildingSectionScene = ExtResource("4_xsfm0")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_627l5")
+stretch_mode = 3
+
+[node name="ResourceLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.619608, 0.529412, 0.462745, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 48
+text = "4"
+
+[node name="BuildingSectionContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 16
